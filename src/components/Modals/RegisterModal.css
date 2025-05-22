@@ -1,0 +1,244 @@
+/* ========================
+   🔒 Auth Modal Styles
+======================== */
+
+.auth-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.auth-modal {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.auth-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #999;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.auth-modal-close:hover {
+  color: #dc387f;
+  transform: rotate(90deg) scale(1.1);
+}
+
+.auth-modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-modal-header h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.auth-modal-header p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group input,
+.auth-select {
+  width: 95%;
+  padding: 1rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.auth-select:focus {
+  border-color: #dc387f;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(220, 56, 127, 0.15);
+  outline: none;
+}
+
+.auth-select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #ccc 50%),
+    linear-gradient(135deg, #ccc 50%, transparent 50%);
+  background-position: calc(100% - 1.4rem) center, calc(100% - 1rem) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+.auth-submit-btn {
+  background: linear-gradient(135deg, #dc387f, #e05a91);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3.2rem;
+  box-shadow: 0 6px 18px rgba(220, 56, 127, 0.3);
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(220, 56, 127, 0.4);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-mode-switch {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.auth-mode-switch button {
+  background: none;
+  border: none;
+  color: #dc387f;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.auth-mode-switch button:hover {
+  color: #a42d63;
+}
+
+/* =========================
+   📱 Responsive Styles
+========================= */
+
+@media (max-width: 768px) {
+  .auth-modal {
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+    border-radius: 20px;
+  }
+
+  .auth-modal-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .auth-modal-header p {
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .auth-select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .auth-submit-btn {
+    padding: 0.9rem;
+    font-size: 1rem;
+    height: auto;
+  }
+
+  .auth-mode-switch {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-modal {
+    padding: 1.5rem 1.2rem;
+    max-width: 95%;
+    border-radius: 16px;
+  }
+
+  .auth-modal-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .auth-modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .auth-modal-header p {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .auth-select {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-submit-btn {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+
+  .auth-mode-switch {
+    font-size: 0.85rem;
+  }
+}
+

@@ -1,0 +1,44 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.home-title {
+    font-size: 3rem;
+    color: #f0f8ff;
+    letter-spacing: 2px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.register-button {
+    background-color: #117070;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.register-button:hover {
+    background-color: #199b9b;
+    transform: translateY(-2px);
+}
+
+.user-name {
+    color: #fff;
+}
